@@ -1,0 +1,31 @@
+%% Izteiksmes aprēķināšana izmantojot solve
+syms a b x;
+eqn = b*cosh(x)+a*sinh(x)==0;
+sol = solve(eqn);
+%% Funkcijas integrēšana
+syms x;
+z = 3*x^2+1;
+zd = int(z,x);
+% Funkcijas zīmēšana
+x = -2:0.01:2;
+zv = vectorize(z);
+zdv = vectorize(zd);
+zn = eval(zv);
+zdn = eval(zdv);
+plot(x,zn,x,zdn)
+zlim([-30000 40000]);
+zltx = latex(z);
+zltxd = latex(zd);
+h = legend(['$',zltx,'$'],['$',zltxd,'$']);
+set(h,'Interpreter','Latex');
+%% 1.uzdevuma atbilde
+% Pirmā uzdevuma funkcijas atbildes atrašana ar solve atbilde:
+%sol =
+ 
+%  log((a^2 - b^2)^(1/2)/(a + b))
+% log(-(a^2 - b^2)^(1/2)/(a + b))
+%% Secinājumi
+% Ieguvu pieredzi grafiku konstruesana.
+% Ieguvu pieredzi f-ciju atvasinasana un vispareja simbolikska matematika.
+% Iemacijos taisit grafikus ar nosaukumiem - komanda "legend". Iemacijos 
+% salidzinat funkcijas un funkcijas atvasinajumu grafikus.
